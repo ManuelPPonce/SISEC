@@ -1,0 +1,30 @@
+
+
+
+/* tabla */
+
+thead {
+    background-color: #246355;
+    border-bottom: solid 5px #0f362d;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:hover td {
+    background-color: #369681;
+    color: white;
+}
+
+.tabla-class {
+    text-align: center;
+    margin: 0 auto;
+    padding: 10rem;
+    border: none !important;
+}
+
+/* Nav */
+
+

@@ -1,0 +1,166 @@
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 16px; /*1 ren = 10px*/
+    /* background-color: lightblue; */
+}
+tbody .ponderacion{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+
+}
+table {
+    /* width: 100%; */
+    border: 1px solid #000;
+ }
+ th, td {
+    /* width: 25%; */
+    /* text-align: left; */
+    /* vertical-align: top; */
+    border: 1px solid #000;
+ }
+
+
+span{
+    font-weight: bold;
+}
+
+ thead{
+    background-color:green ;
+    color: white;
+    text-align: center;
+}
+
+.logo{
+    text-align: center;
+    width: 20rem;
+    margin-left: 25rem;
+    margin-top: 10rem;
+}
+
+.explicacion{
+
+    font-size: 1.6rem;
+    margin-left: 25rem;
+    margin-right: 25rem;
+    margin-top: 5rem;
+}
+
+.info{
+    /* border-style: solid ; */
+
+    margin-top: 5rem;
+    margin-left: 25rem;
+    margin-right: 25rem;
+
+}
+
+.info .info-left{
+    float: left;
+}
+.info .info-rigth{
+    float: right;
+    margin-right: 5rem;
+
+}
+
+/* Estilos Tablas */
+/* Instructor */
+
+.tabla-instructor{
+    padding-top: 0rem  ;
+    margin-top: 25rem;
+    margin-left: 25rem;
+    margin-right: 25rem;
+}
+
+.tabla-capacitacion{
+    padding-top: 0rem  ;
+    margin-left: 25rem;
+    margin-right: 25rem;
+    margin-top: 5rem;
+}
+.tabla-evento{
+
+
+    margin-left: 25rem;
+    margin-right: 25rem;
+    margin-top: 5rem;
+}
+
+.radio-options{
+    text-align: center;
+}
+
+.btn-enviar{
+    margin-top: 5rem;
+    margin-left: 80rem;
+}
+
+.obs-sug{
+    margin-top: 5rem;
+    margin-left: 25rem;
+}
+
+#comentarios{
+    margin-top: 2rem;
+    border-radius: 2rem;
+    margin-left: 2rem;
+    margin-right: 20rem;
+    padding-left: 35%; /* Falta hacerlo responsive */
+    padding-right: 35%; /* Falta hacerlo responsive */
+}
+
+
+/* EVALUACION PARTICIPANTE*/
+
+.instruccion{
+    margin: 25rem;
+    margin-bottom: 5rem;
+
+}
+
+.preguntas{
+
+    margin: 25rem;
+    margin-top: 5rem;
+
+}
+
+.btn-enviar{
+    text-align: center;
+    font-size: 1.6rem;
+    width: 10% !important;
+    height: 4rem !important;
+    margin: 2rem 0 2rem 45% ;
+
+}
+   #titulo-participante {
+            margin-top: 8rem;
+        }
+
+        #participante-1 {
+            margin: 4rem 0 4rem 0;
+        }
+
+        #participante-2 {
+            margin: 4rem 0 4rem 0;
+        }
+
+        #participante-3 {
+            margin: 4rem 0 4rem 0;
+        }
+
+        .comentarios-participante {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .preguntas-participantes {
+            padding: 4rem;
+        }
