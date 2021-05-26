@@ -1,3 +1,5 @@
+
+
 var dato;
 $('#tabla-cursos').on('click', '#edit-participantes', function (event) {
     //Primera fila
@@ -178,8 +180,13 @@ $('#tabla-cursos').on('click', '#enviar-correoJ', function (event) {
 //Correo de Jefes
 $('#tabla-cursos').on('click', '#enviar-correoJ', function (event) {
 
+    swal({
+        title: "Enviando Correo",
+        text: 'Por favor , Espere',
+        button: false,
+    })
     //Generar Link
-    
+
     var aux = document.createElement("input");
 
     aux.setAttribute("value", window.location.href.split("?")[0].split("#")[0] + 'Encuesta/Jefe/' + $id_curso_correo_jefe);
@@ -192,18 +199,18 @@ $('#tabla-cursos').on('click', '#enviar-correoJ', function (event) {
     document.body.removeChild(aux);
 
     // aux = aux + 'reaccion';
-    var css = document.createElement("style");
-    var estilo = document.createTextNode(
-        "#aviso {position:fixed; z-index: 9999999; widht: 120px; top:30%;left:50%;margin-left: -60px;padding: 20px; background: gold;border-radius: 8px;font-size: 14px;font-family: sans-serif;}"
-    );
-    css.appendChild(estilo);
-    document.head.appendChild(css);
-    var aviso = document.createElement("div");
-    aviso.setAttribute("id", "aviso");
-    var contenido = document.createTextNode("URL copiada");
-    aviso.appendChild(contenido);
-    document.body.appendChild(aviso);
-    window.load = setTimeout("document.body.removeChild(aviso)", 1000);
+    // var css = document.createElement("style");
+    // var estilo = document.createTextNode(
+    //     "#aviso {position:fixed; z-index: 9999999; widht: 120px; top:30%;left:50%;margin-left: -60px;padding: 20px; background: gold;border-radius: 8px;font-size: 14px;font-family: sans-serif;}"
+    // );
+    // css.appendChild(estilo);
+    // document.head.appendChild(css);
+    // var aviso = document.createElement("div");
+    // aviso.setAttribute("id", "aviso");
+    // var contenido = document.createTextNode("URL copiada");
+    // aviso.appendChild(contenido);
+    // document.body.appendChild(aviso);
+    // window.load = setTimeout("document.body.removeChild(aviso)", 1000);
 
 
 
@@ -252,17 +259,22 @@ $('#tabla-cursos').on('click', '#enviar-correoJ', function (event) {
 
         // console.log(result[0].Nombre_Empleado+);
         // alert(JSON.stringify(result));
-        
+
         // }
     });
-    
+
 });
 
-
+//Carga
+var sweet_loader = '<div class="sweet_loader"><svg viewBox="0 0 140 140" width="140" height="140"><g class="outline"><path d="m 70 28 a 1 1 0 0 0 0 84 a 1 1 0 0 0 0 -84" stroke="rgba(0,0,0,0.1)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></g><g class="circle"><path d="m 70 28 a 1 1 0 0 0 0 84 a 1 1 0 0 0 0 -84" stroke="#71BBFF" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="200" stroke-dasharray="300"></path></g></svg></div>';
 //Correo de Reaccion
 $('#tabla-cursos').on('click', '#enviar-correo', function (event) {
-    
- 
+
+    swal({
+        title: "Enviando Correo",
+        text: 'Por favor , Espere',
+        button: false,
+    })
     //Generar Link
     var aux = document.createElement("input");
     var link;
