@@ -28,9 +28,12 @@
                                         Jefe </a>
                                 </li>
                             </ul>
+
+                            <button type="submit" class="btn btn-success" id="save-pdf"> Descargar PDF</button>
+
                             <div class="mx-auto" style="width: 900px;">
 
-                                <h1>CURSO : {{ $curso }}</h1>
+                                <h1 id="name-curso">CURSO : {{ $curso }}</h1>
                                 {{-- <div class="text-right ">
                                     <button class="btn btn-primary pdf"  >  <a href="{{route('pdfReaccion',$id_curso)}}"> <i class="icon ion-md-document"></i>    </a>  </button>
 
@@ -427,6 +430,24 @@
                 google.charts.setOnLoadCallback(drawChart19);
 
 
+                var btnSave = document.getElementById('save-pdf');
+                var name = document.getElementById('name-curso').textContent;
+                var doc = new jsPDF({
+                    orientation: "portrait",
+                    unit: "mm",
+                    lineHeight: 1,
+                    top: 80,
+                    bottom: 60,
+                    left: 40,
+                    width: 522
+                });
+
+
+                btnSave.addEventListener('click', function() {
+                    doc.save('Graficos.pdf');
+                }, false);
+
+
                 //PREGUNTA 1
 
                 function drawChart1() {
@@ -445,6 +466,13 @@
                     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
                     chart.draw(data);
+                    var splitTitle = doc.splitTextToSize(name, 180);
+                    doc.text(15, 20, splitTitle);
+                    doc.setFontSize(12);
+                    doc.text(20, 35,
+                        '1- EL DOMINIO DEL TEMA POR PARTE DEL INSTRUCTOR');
+                    doc.addImage(chart.getImageURI(), 10, 40);
+
                 }
                 // PREGUNTA 2
 
@@ -464,6 +492,11 @@
                     var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
 
                     chart.draw(data);
+                    doc.setFontSize(11);
+                    doc.text(20, 158,
+                        '2- LA EXPOSICIÓN DEL INSTRUCTOR'
+                    );
+                    doc.addImage(chart.getImageURI(), 10, 160);
                 }
 
                 // PREGUNTA 3
@@ -484,6 +517,11 @@
                     var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
 
                     chart.draw(data);
+                    doc.setFontSize(11);
+                    doc.text(20, 158,
+                        '3-EL LENGUAJE QUE UTILIZÓ'
+                    );
+                    doc.addImage(chart.getImageURI(), 10, 160);
                 }
                 // PREGUNTA 4
 
@@ -503,6 +541,11 @@
                     var chart = new google.visualization.PieChart(document.getElementById('piechart4'));
 
                     chart.draw(data);
+                    doc.setFontSize(11);
+                    doc.text(20, 158,
+                        '4-MOTIVO A UNA PARTICIPACIÓN ACTIVA'
+                    );
+                    doc.addImage(chart.getImageURI(), 10, 160);
                 }
                 // PREGUNTA 5
 
@@ -522,6 +565,10 @@
                     var chart = new google.visualization.PieChart(document.getElementById('piechart5'));
 
                     chart.draw(data);
+                    doc.setFontSize(11);
+                    doc.text(20, 158,
+                        '5- RESOLVIÓ DUDAS');
+                    doc.addImage(chart.getImageURI(), 10, 160);
                 }
                 // PREGUNTA 6
 
@@ -541,6 +588,11 @@
                     var chart = new google.visualization.PieChart(document.getElementById('piechart6'));
 
                     chart.draw(data);
+                    doc.setFontSize(11);
+                    doc.text(20, 158,
+                        '6- LA MANERA EN QUE MANEJÓ APOYO DIDÁCTICOS'
+                    );
+                    doc.addImage(chart.getImageURI(), 10, 160);
                 }
                 // PREGUNTA 7
 
