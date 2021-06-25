@@ -74,7 +74,7 @@
                                 </div>
 
                                 @foreach ($respuestas as $item)
-                                    <div class='pie'>
+                                <div class='pie-comentarios'>
 
                                         <span id="comentarios">
 
@@ -96,7 +96,7 @@
                                 </div>
 
                                 @foreach ($respuestas as $item)
-                                    <div class='pie'>
+                                    <div class='pie-comentarios'>
 
                                         <span id="comentarios">
 
@@ -191,7 +191,10 @@
                     var splitTitle = doc.splitTextToSize(name, 180);
                     doc.text(15, 20, splitTitle);
                     // doc.text(name, 5, 20);
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                     doc.setFontSize(12);
                     doc.text(20, 35,
                         '1- EN QUÉ GRADO HA SIDO DE UTILIDAD ESTA ACTIVIDAD DE CAPACITACIÓN');
@@ -215,9 +218,12 @@
                     var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
 
 
-                    chart.draw(data);
+                    // chart.draw(data);
                     // Creacion de pdf
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                     doc.setFontSize(11);
                     doc.text(20, 158,
                         '2- CON QUÉ FRECUENCIA UTILIZAS LO APRENDIDO EN ESTA ACTIVIDAD DE CAPACITACIÓN'
@@ -284,7 +290,6 @@
         return preguntas;
 
     }
-
 </script>
 
 </html>

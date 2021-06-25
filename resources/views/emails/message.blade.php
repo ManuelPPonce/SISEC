@@ -24,10 +24,10 @@
                      <div style="width: 100%; padding: 0; margin: 0; height: 80%; background-color: #52BE8E;">
                      </div>
                  </tr>
-                 <tr>
+                 {{-- <tr>
                      <img src="https://www.pikpng.com/pngl/b/365-3652622_cfe-logo-comision-federal-de-electricidad-png-sport.png"
                          alt="">
-                 </tr>
+                 </tr> --}}
                  <tr>
 
                      <h2>Encuestas del Curso : </h2>

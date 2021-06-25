@@ -7,364 +7,364 @@
 
 
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Respuestas</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Respuestas</h2>
 
-                    <div class="tabbable-panel">
-                        <div class="tabbable-line">
-                            <ul class="nav nav-tabs ">
-                                <li class="active">
-                                    <a href="{{ route('graficas', $id_curso) }}">
-                                        Reacción </a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('gparticipantes', $id_curso) }}">
-                                        Participantes </a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('gjefe', $id_curso) }}">
-                                        Jefe </a>
-                                </li>
-                            </ul>
+                <div class="tabbable-panel">
+                    <div class="tabbable-line">
+                        <ul class="nav nav-tabs ">
+                            <li class="active">
+                                <a href="{{ route('graficas', $id_curso) }}">
+                                    Reacción </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('gparticipantes', $id_curso) }}">
+                                    Participantes </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('gjefe', $id_curso) }}">
+                                    Jefe </a>
+                            </li>
+                        </ul>
 
-                            <button type="submit" class="btn btn-success" id="save-pdf"> Descargar PDF</button>
+                        <button type="submit" class="btn btn-success" id="save-pdf"> Descargar PDF</button>
 
-                            <div class="mx-auto" style="width: 900px;">
+                        <div class="mx-auto" style="width: 900px;">
 
-                                <h1 id="name-curso">CURSO : {{ $curso }}</h1>
-                                {{-- <div class="text-right ">
+                            <h1 id="name-curso">CURSO : {{ $curso }}</h1>
+                            {{-- <div class="text-right ">
                                     <button class="btn btn-primary pdf"  >  <a href="{{route('pdfReaccion',$id_curso)}}"> <i class="icon ion-md-document"></i>    </a>  </button>
 
                                 </div> --}}
-                                <br></br>
-                                <h2>I. Evaluación del instructor</h2>
-                            </div>
-                            {{-- GRAFICAS --}}
-
-                            {{-- PREGUNTA 1 --}}
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>1- EL DOMINIO DEL TEMA POR PARTE DEL INSTRUCTOR</p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- PREGUNTA 2 --}}
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>2. LA EXPOSICIÓN DEL INSTRUCTOR </p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart2" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 3 --}}
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>3. EL LENGUAJE QUE UTILIZÓ </p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart3" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 4 --}}
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>4. MOTIVO A UNA PARTICIPACIÓN ACTIVA</p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart4" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 5 --}}
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>5. RESOLVIÓ DUDAS </p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart5" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 6 --}}
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>6. LA MANERA EN QUE MANEJÓ APOYO DIDÁCTICOS </p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart6" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 7 --}}
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>7. ILUSTRÓ Y CLARIFICÓ TODOS LOS PUNTOS</p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart7" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 8 --}}
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>8. FUE AMISTOSO CON EL GRUPO </p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart8" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 9 --}}
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>9. SU PUNTUALIDAD FUE </p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart9" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PARTE DOS DE LA EVALUACION DE REACCION --}}
-
-
-                            <div class="mx-auto" style="width: 900px;">
-                                <h2>II. Evaluación de la actividad de capacitación</h2>
-                            </div>
-
-                            {{-- PREGUNTA 10 --}}
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>1. LOS TEMAS TRATADOS FUERON DE MI INTERÉS </p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart10" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 11 --}}
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>2. RESPONDIÓ A MIS NECESIDADES </p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart11" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 12 --}}
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>3. LA DURACIÓN DE LA ACTIVIDAD </p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart12" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 13 --}}
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>4. LOS OBJETIVOS DE LA ACTIVIDAD SE CUBRIERON </p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart13" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 14 --}}
-
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>5. EL MATERIAL QUE SE ME FACILITÓ </p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart14" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 15 --}}
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>6. EL ORDEN CON QUE FUERON TRATADOS LOS TEMAS </p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart15" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mx-auto" style="width: 900px;">
-                                <h2>III. EVALUACIÓN DEL EVENTO</h2>
-                            </div>
-
-                            {{-- PREGUNTA 16 --}}
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>1. LAS INSTALACIONES</p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart16" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 17 --}}
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>2. EL SERVICIO DE CAFETERÍA</p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart17" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 18 --}}
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>3. EL EQUIPO UTILIZADO </p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart18" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- PREGUNTA 19 --}}
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>4. EL HORARIO ASIGNADO AL EVENTO </p>
-                                    </div>
-
-                                    <div class='pie'>
-                                        <div id="piechart19" style="width: 800px; height: 500px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class='preguntas-pie'>
-                                <div class="div-pie">
-                                    <div class="pregunta-titulo">
-
-                                        <p>OBSERVACIONES Y SUGERENCIAS</p>
-                                    </div>
-
-                                    @foreach ($respuestas as $item)
-                                        <div class='pie'>
-
-                                            <span id="comentarios">
-
-                                                {{ $item->Observaciones }}
-
-                                            </span>
-
-
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-
-
-
+                            <br></br>
+                            <h2>I. Evaluación del instructor</h2>
                         </div>
+                        {{-- GRAFICAS --}}
+
+                        {{-- PREGUNTA 1 --}}
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>1- EL DOMINIO DEL TEMA POR PARTE DEL INSTRUCTOR</p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- PREGUNTA 2 --}}
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>2. LA EXPOSICIÓN DEL INSTRUCTOR </p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart2" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 3 --}}
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>3. EL LENGUAJE QUE UTILIZÓ </p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart3" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 4 --}}
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>4. MOTIVO A UNA PARTICIPACIÓN ACTIVA</p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart4" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 5 --}}
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>5. RESOLVIÓ DUDAS </p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart5" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 6 --}}
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>6. LA MANERA EN QUE MANEJÓ APOYO DIDÁCTICOS </p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart6" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 7 --}}
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>7. ILUSTRÓ Y CLARIFICÓ TODOS LOS PUNTOS</p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart7" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 8 --}}
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>8. FUE AMISTOSO CON EL GRUPO </p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart8" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 9 --}}
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>9. SU PUNTUALIDAD FUE </p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart9" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PARTE DOS DE LA EVALUACION DE REACCION --}}
+
+
+                        <div class="mx-auto" style="width: 900px;">
+                            <h2>II. Evaluación de la actividad de capacitación</h2>
+                        </div>
+
+                        {{-- PREGUNTA 10 --}}
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>1. LOS TEMAS TRATADOS FUERON DE MI INTERÉS </p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart10" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 11 --}}
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>2. RESPONDIÓ A MIS NECESIDADES </p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart11" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 12 --}}
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>3. LA DURACIÓN DE LA ACTIVIDAD </p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart12" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 13 --}}
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>4. LOS OBJETIVOS DE LA ACTIVIDAD SE CUBRIERON </p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart13" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 14 --}}
+
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>5. EL MATERIAL QUE SE ME FACILITÓ </p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart14" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 15 --}}
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>6. EL ORDEN CON QUE FUERON TRATADOS LOS TEMAS </p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart15" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mx-auto" style="width: 900px;">
+                            <h2>III. EVALUACIÓN DEL EVENTO</h2>
+                        </div>
+
+                        {{-- PREGUNTA 16 --}}
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>1. LAS INSTALACIONES</p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart16" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 17 --}}
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>2. EL SERVICIO DE CAFETERÍA</p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart17" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 18 --}}
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>3. EL EQUIPO UTILIZADO </p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart18" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- PREGUNTA 19 --}}
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>4. EL HORARIO ASIGNADO AL EVENTO </p>
+                                </div>
+
+                                <div class='pie'>
+                                    <div id="piechart19" style="width: 800px; height: 500px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='preguntas-pie'>
+                            <div class="div-pie">
+                                <div class="pregunta-titulo">
+
+                                    <p>OBSERVACIONES Y SUGERENCIAS</p>
+                                </div>
+
+                                @foreach ($respuestas as $item)
+                                    <div class='pie-comentarios'>
+
+                                        <span id="comentarios">
+
+                                            {{ $item->Observaciones }}
+
+                                        </span>
+
+
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+
+
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        </div>
+    </div>
 
 
 @endsection
@@ -375,7 +375,7 @@
         $.ajax({
 
             // url: '/graficas/respuestas',
-            url: "{{route('grespuestas')}}",
+            url: "{{ route('grespuestas') }}",
             type: "POST",
             data: {
 
@@ -465,7 +465,10 @@
 
                     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                     var splitTitle = doc.splitTextToSize(name, 180);
                     doc.text(15, 20, splitTitle);
                     doc.setFontSize(12);
@@ -491,7 +494,10 @@
 
                     var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                     doc.setFontSize(11);
                     doc.text(20, 158,
                         '2- LA EXPOSICIÓN DEL INSTRUCTOR'
@@ -516,7 +522,10 @@
 
                     var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                     doc.setFontSize(11);
                     doc.text(20, 158,
                         '3-EL LENGUAJE QUE UTILIZÓ'
@@ -540,7 +549,10 @@
 
                     var chart = new google.visualization.PieChart(document.getElementById('piechart4'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                     doc.setFontSize(11);
                     doc.text(20, 158,
                         '4-MOTIVO A UNA PARTICIPACIÓN ACTIVA'
@@ -564,7 +576,10 @@
 
                     var chart = new google.visualization.PieChart(document.getElementById('piechart5'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                     doc.setFontSize(11);
                     doc.text(20, 158,
                         '5- RESOLVIÓ DUDAS');
@@ -587,7 +602,10 @@
 
                     var chart = new google.visualization.PieChart(document.getElementById('piechart6'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                     doc.setFontSize(11);
                     doc.text(20, 158,
                         '6- LA MANERA EN QUE MANEJÓ APOYO DIDÁCTICOS'
@@ -611,7 +629,10 @@
 
                     var chart = new google.visualization.PieChart(document.getElementById('piechart7'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                 }
                 // PREGUNTA 8
 
@@ -630,7 +651,10 @@
 
                     var chart = new google.visualization.PieChart(document.getElementById('piechart8'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                 }
                 // PREGUNTA 9
 
@@ -649,7 +673,10 @@
 
                     var chart = new google.visualization.PieChart(document.getElementById('piechart9'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                 }
                 // PREGUNTA 10
                 function drawChart10() {
@@ -668,7 +695,10 @@
                     var chart = new google.visualization.PieChart(document.getElementById(
                         'piechart10'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                 }
 
                 // PREGUNTA 11
@@ -688,7 +718,10 @@
                     var chart = new google.visualization.PieChart(document.getElementById(
                         'piechart11'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                 }
 
                 // PREGUNTA 12
@@ -708,7 +741,10 @@
                     var chart = new google.visualization.PieChart(document.getElementById(
                         'piechart12'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                 }
 
                 // PREGUNTA 13
@@ -728,7 +764,10 @@
                     var chart = new google.visualization.PieChart(document.getElementById(
                         'piechart13'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                 }
 
                 // PREGUNTA 14
@@ -748,7 +787,10 @@
                     var chart = new google.visualization.PieChart(document.getElementById(
                         'piechart14'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                 }
 
                 // PREGUNTA 15
@@ -768,7 +810,10 @@
                     var chart = new google.visualization.PieChart(document.getElementById(
                         'piechart15'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                 }
                 // PREGUNTA 16
                 function drawChart16() {
@@ -787,7 +832,10 @@
                     var chart = new google.visualization.PieChart(document.getElementById(
                         'piechart16'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                 }
                 // PREGUNTA 17
                 function drawChart17() {
@@ -806,7 +854,10 @@
                     var chart = new google.visualization.PieChart(document.getElementById(
                         'piechart17'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                 }
 
                 // PREGUNTA 18
@@ -826,7 +877,10 @@
                     var chart = new google.visualization.PieChart(document.getElementById(
                         'piechart18'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                 }
                 // PREGUNTA 19
                 function drawChart19() {
@@ -845,7 +899,10 @@
                     var chart = new google.visualization.PieChart(document.getElementById(
                         'piechart19'));
 
-                    chart.draw(data);
+                    var options = {
+                        pieSliceText: 'value-and-percentage'
+                    };
+                    chart.draw(data, options);
                 }
 
 
@@ -921,7 +978,6 @@
         return preguntas;
 
     }
-
 </script>
 
 </html>

@@ -31,6 +31,12 @@ p{
     /* margin: 10rem !important; */
 }
 #comentarios{
-    margin-left: 10rem;
+    /* margin-left: 10rem; */
+    width: 100%;
     /* padding-bottom: 30rem; */
+}
+.pie-comentarios{
+    width: 100%;
+    padding: 20px;
+
 }
