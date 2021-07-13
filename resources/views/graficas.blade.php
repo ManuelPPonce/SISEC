@@ -29,8 +29,8 @@
                             </li>
                         </ul>
 
-                        <button type="submit" class="btn btn-success" id="save-pdf"> Descargar PDF</button>
 
+                        <button type="submit" class="btn btn-success" style="float: right" id="save-pdf"> Descargar PDF</button>
                         <div class="mx-auto" style="width: 900px;">
 
                             <h1 id="name-curso">CURSO : {{ $curso }}</h1>
@@ -85,6 +85,7 @@
                                 </div>
                             </div>
                         </div>
+
 
                         {{-- PREGUNTA 4 --}}
                         <div class='preguntas-pie'>
@@ -525,12 +526,13 @@
                     var options = {
                         pieSliceText: 'value-and-percentage'
                     };
+                    doc.addPage();
                     chart.draw(data, options);
                     doc.setFontSize(11);
-                    doc.text(20, 158,
+                    doc.text(20, 35,
                         '3-EL LENGUAJE QUE UTILIZÓ'
                     );
-                    doc.addImage(chart.getImageURI(), 10, 160);
+                    doc.addImage(chart.getImageURI(), 10, 40);
                 }
                 // PREGUNTA 4
 
@@ -579,11 +581,11 @@
                     var options = {
                         pieSliceText: 'value-and-percentage'
                     };
+                    doc.addPage();
                     chart.draw(data, options);
                     doc.setFontSize(11);
-                    doc.text(20, 158,
-                        '5- RESOLVIÓ DUDAS');
-                    doc.addImage(chart.getImageURI(), 10, 160);
+                    doc.text(20, 35,'5- RESOLVIÓ DUDAS');
+                    doc.addImage(chart.getImageURI(), 10, 40);
                 }
                 // PREGUNTA 6
 
@@ -632,7 +634,11 @@
                     var options = {
                         pieSliceText: 'value-and-percentage'
                     };
+                    doc.addPage();
                     chart.draw(data, options);
+                    doc.setFontSize(11);
+                    doc.text(20, 35,'7- ILUSTRÓ Y CLARIFICÓ TODOS LOS PUNTOS');
+                    doc.addImage(chart.getImageURI(), 10, 40);
                 }
                 // PREGUNTA 8
 
@@ -655,6 +661,11 @@
                         pieSliceText: 'value-and-percentage'
                     };
                     chart.draw(data, options);
+                    doc.setFontSize(11);
+                    doc.text(20, 158,
+                        '8- FUE AMISTODO CON EL GRUPO'
+                    );
+                    doc.addImage(chart.getImageURI(), 10, 160);
                 }
                 // PREGUNTA 9
 
@@ -676,7 +687,11 @@
                     var options = {
                         pieSliceText: 'value-and-percentage'
                     };
+                    doc.addPage();
                     chart.draw(data, options);
+                    doc.setFontSize(11);
+                    doc.text(20, 35,'9- SU PUNTUALIDAD FUE');
+                    doc.addImage(chart.getImageURI(), 10, 40);
                 }
                 // PREGUNTA 10
                 function drawChart10() {
@@ -698,7 +713,15 @@
                     var options = {
                         pieSliceText: 'value-and-percentage'
                     };
+                    doc.addPage();
+                    var splitTitle = doc.splitTextToSize('II - EVALUACIÓN DE LA ACTIVIDAD DE CAPACITACIÓN ', 180);
+                    doc.setFontSize(12);
+                    doc.text(15, 20, splitTitle);
                     chart.draw(data, options);
+                    doc.text(20, 35,
+                        '1 - LOS TEMAS TRATADOS FUERON DE MI INTERÉS'
+                    );
+                    doc.addImage(chart.getImageURI(), 10, 40);
                 }
 
                 // PREGUNTA 11
@@ -722,6 +745,11 @@
                         pieSliceText: 'value-and-percentage'
                     };
                     chart.draw(data, options);
+                    doc.setFontSize(11);
+                    doc.text(20, 158,
+                        '2- RESPONDIÓ A MIS NECESIDADES'
+                    );
+                    doc.addImage(chart.getImageURI(), 10, 160);
                 }
 
                 // PREGUNTA 12
@@ -744,7 +772,11 @@
                     var options = {
                         pieSliceText: 'value-and-percentage'
                     };
+                    doc.addPage();
                     chart.draw(data, options);
+                    doc.setFontSize(11);
+                    doc.text(20, 35,'3 - LA DURACIÓN DE LA ACTIVIDAD');
+                    doc.addImage(chart.getImageURI(), 10, 40);
                 }
 
                 // PREGUNTA 13
@@ -768,6 +800,11 @@
                         pieSliceText: 'value-and-percentage'
                     };
                     chart.draw(data, options);
+                    doc.setFontSize(11);
+                    doc.text(20, 158,
+                        '4- LOS OBJETIVOS DE LA ACTIVIDAD SE CUBRIERON'
+                    );
+                    doc.addImage(chart.getImageURI(), 10, 160);
                 }
 
                 // PREGUNTA 14
@@ -790,7 +827,11 @@
                     var options = {
                         pieSliceText: 'value-and-percentage'
                     };
+                    doc.addPage();
                     chart.draw(data, options);
+                    doc.setFontSize(11);
+                    doc.text(20, 35,'5 - EL MATERIAL QUE SE ME FACILITÓ');
+                    doc.addImage(chart.getImageURI(), 10, 40);
                 }
 
                 // PREGUNTA 15
@@ -814,6 +855,11 @@
                         pieSliceText: 'value-and-percentage'
                     };
                     chart.draw(data, options);
+                    doc.setFontSize(11);
+                    doc.text(20, 158,
+                        '6- EL ORDEN CON QUE FUERON TRATADOS LOS TEMAS'
+                    );
+                    doc.addImage(chart.getImageURI(), 10, 160);
                 }
                 // PREGUNTA 16
                 function drawChart16() {
@@ -835,7 +881,15 @@
                     var options = {
                         pieSliceText: 'value-and-percentage'
                     };
+                    doc.addPage();
+                    var splitTitle = doc.splitTextToSize('III - EVALUACIÓN DEL EVENTO ', 180);
+                    doc.setFontSize(12);
+                    doc.text(15, 20, splitTitle);
                     chart.draw(data, options);
+                    doc.text(20, 35,
+                        '1 - LAS INTALACIONES'
+                    );
+                    doc.addImage(chart.getImageURI(), 10, 40);
                 }
                 // PREGUNTA 17
                 function drawChart17() {
@@ -858,6 +912,11 @@
                         pieSliceText: 'value-and-percentage'
                     };
                     chart.draw(data, options);
+                    doc.setFontSize(11);
+                    doc.text(20, 158,
+                        '2- EL SERVICIO DE CAFETERÍA'
+                    );
+                    doc.addImage(chart.getImageURI(), 10, 160);
                 }
 
                 // PREGUNTA 18
@@ -880,7 +939,11 @@
                     var options = {
                         pieSliceText: 'value-and-percentage'
                     };
+                    doc.addPage();
                     chart.draw(data, options);
+                    doc.setFontSize(11);
+                    doc.text(20, 35,'3 - EL EQUIPO UTILIZADO');
+                    doc.addImage(chart.getImageURI(), 10, 40);
                 }
                 // PREGUNTA 19
                 function drawChart19() {
@@ -903,6 +966,11 @@
                         pieSliceText: 'value-and-percentage'
                     };
                     chart.draw(data, options);
+                    doc.setFontSize(11);
+                    doc.text(20, 158,
+                        '4- EL HORARIO ASIGNADO AL EVENTO'
+                    );
+                    doc.addImage(chart.getImageURI(), 10, 160);
                 }
 
 
