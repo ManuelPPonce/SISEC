@@ -212,7 +212,16 @@ $('#tabla-cursos').on('click', '#enviar-correoJ', function (event) {
     // document.body.appendChild(aviso);
     // window.load = setTimeout("document.body.removeChild(aviso)", 1000);
 
+    $.ajax({
+        url: '/envjefe',
+        type: 'GET',
+        data: {
+            "_token": $("meta[name='csrf-token']").attr("content"),
+            id_curso: $id_curso_correo_jefe,
+        },success:function(result){
 
+        }
+    });
 
     // Enviar correo
     $.ajax({
@@ -233,6 +242,7 @@ $('#tabla-cursos').on('click', '#enviar-correoJ', function (event) {
                 text: "Los correos han sido  enviados correctamente ",
                 icon: "success",
                 button: "Aceptar",
+
             });
 
             // var participantes = "";
@@ -300,6 +310,16 @@ $('#tabla-cursos').on('click', '#enviar-correo', function (event) {
     // document.body.appendChild(aviso);
     // window.load = setTimeout("document.body.removeChild(aviso)", 1000);
 
+    $.ajax({
+        url: '/envreac',
+        type: 'GET',
+        data: {
+            "_token": $("meta[name='csrf-token']").attr("content"),
+            id_curso: $id_curso_correo,
+        },success:function(result){
+
+        }
+    });
 
 
     // // Enviar correo

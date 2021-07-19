@@ -30,6 +30,8 @@ use Illuminate\Support\Facades\Route;
 
 //Encuestas
 Route::get('/','EncuestasController@index')->name('cursos');
+Route::get('/envjefe','EncuestasController@envjefe')->name('envjefe');
+Route::get('/envreac','EncuestasController@envreac')->name('envreac');
 Route::get('/participantes','EncuestasController@participantes')->name('participantes');
 // Route::get('/eliminarParticipante','EncuestasController@eliminarParticipante');
 

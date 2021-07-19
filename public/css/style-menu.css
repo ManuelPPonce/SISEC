@@ -191,8 +191,8 @@ table tbody td {
     padding-left: 0;
 }
 
-
 /* MODAL DE CONFIRMACION DE ELIMINACION DE PARTICIPANTES */
+
 .swal2-popup {
     width: 20% !important;
     height: 35% !important;
@@ -201,11 +201,12 @@ table tbody td {
 .swal2-icon {
     width: 9em !important;
     height: 9rem !important;
-
 }
+
 .swal2-title {
     font-size: 2.5rem !important;
 }
+
 .swal2-content {
     font-size: 1.60rem !important;
 }
@@ -213,39 +214,37 @@ table tbody td {
 /* HASTA AQUI TERMINA EL MODAL */
 
 /* BUSCADOR DE PARTICIPANTES PARA AGREGAR */
-.input-group{
+
+.input-group {
     float: left !important;
     margin-bottom: 0.8rem;
     margin-left: 10rem !important;
-
 }
 
-.form-inline .form-control{
+.form-inline .form-control {
     width: 40rem !important;
 }
-.navbar
-{
+
+.navbar {
     background-color: var(--light-blue) !important;
 }
-.img-nav
-{
 
+.img-nav {
     width: 20rem !important;
     margin-right: 145rem;
     margin-left: 0rem;
 }
 
-ul{
-    list-style:none !important;
+ul {
+    list-style: none !important;
 }
 
-.nav-link
-{
+.nav-link {
     font-weight: bold;
     margin-left: 3rem;
     color: black;
-
 }
+
 /* .nav-item
 {
     font-weight: bold;
@@ -254,9 +253,94 @@ ul{
     color: black;
 
 } */
-.dropdown-item{
+
+.dropdown-item {
     color: black;
     text-align: center;
     margin-left: 2.6rem;
+}
+
+.indicador-red {
+    /* border: black solid; */
+    min-width: 10px;
+    min-height: 10px;
+    max-width: 10px;
+    max-height: 10px;
+    border-radius: 100%;
+    background-color: red;
+
+    /* margin-right: 69px; */
+    /* margin-top: 2px; */
+    position: relative;
+    bottom: 39px;
+    left: 20px;
+    z-index: 1;
+}
+.indicador-green {
+    /* border: black solid; */
+    min-width: 10px;
+    min-height: 10px;
+    max-width: 10px;
+    max-height: 10px;
+    border-radius: 100%;
+    background-color: green;
+
+    /* margin-right: 69px; */
+    /* margin-top: 2px; */
+    position: relative;
+    bottom: 39px;
+    left: 20px;
+    z-index: 1;
+}
+button {
+    position: relative;
+    z-index: 0;
+}
+.indicador-red-jefe {
+    /* border: black solid; */
+    min-width: 10px;
+    min-height: 10px;
+    max-width: 10px;
+    max-height: 10px;
+    border-radius: 100%;
+    background-color: red;
+
+    /* margin-right: 69px; */
+    /* margin-top: 2px; */
+    position: relative;
+    bottom: 39px;
+    left: 20px;
+    z-index: 1;
+}
+.indicador-green-jefe {
+    /* border: black solid; */
+    min-width: 10px;
+    min-height: 10px;
+    max-width: 10px;
+    max-height: 10px;
+    border-radius: 100%;
+    background-color: green;
+
+    /* margin-right: 69px; */
+    /* margin-top: 2px; */
+    position: relative;
+    bottom: 39px;
+    left: 20px;
+    z-index: 1;
+}
+.contenedor-indicador{
+    background-color: #0b254b;
+    text-align: center;
+}
+center{
+    width: 100%;
+    height: 100%;
 
 }
+
+/* footer{
+    border-top: gainsboro  solid;
+    background-color: rgb(67, 100, 67);
+    height: 60px;
+    text-align: center;
+} */

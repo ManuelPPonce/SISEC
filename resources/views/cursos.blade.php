@@ -51,7 +51,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                 document.getElementById('logout-form').submit();">
+                                                                                                                                                                                         document.getElementById('logout-form').submit();">
                                 {{ __('Cerrar Sesión') }}
                             </a>
 
@@ -121,9 +121,9 @@
                 </tr>
             </thead>
             <tbody>
-
                 @foreach ($cursos as $curso)
                     <tr>
+
                         <td>{{ $curso->ID_Actividad }}</td>
                         <td>{{ $curso->Clave_Actividad }}</td>
                         <td style="text-align: left">{{ $curso->Nombre_Curso }}</td>
@@ -135,15 +135,46 @@
                         </td>
                         {{-- <td> <a href='javascript:getlink();'> <button type="button" id="btn-participante"
                                     class="btn btn-success"><i class="icon ion-md-copy"></i></button> </a> </td> --}}
+
+
                         <td>
-                            <button class="btn btn-success" type="button" id="enviar-correo">
-                                <i class="icon ion-md-send"></i>
-                            </button>
+
+                            <center>
+
+
+                                <button class="btn btn-success" type="button" id="enviar-correo">
+                                    <i class="icon ion-md-send"></i> </button>
+                                    @if ($curso->Reaccion_Not == '0')
+                                        <div class="indicador-red"></div>
+                                    @else
+
+                                        <div class="indicador-green"></div>
+
+                                    @endif
+                            </center>
+
+
                         </td>
-                        <td>
-                            <button class="btn btn-success" type="button" id="enviar-correoJ">
-                                <i class="icon ion-md-send"></i>
-                            </button>
+
+                        <td class="celda-enviar">
+
+                            <center>
+                                <button class="btn btn-success" type="button" id="enviar-correoJ">
+                                    <i class="icon ion-md-send"></i>
+                                </button>
+
+                                @if ($curso->Jefe_Not == '0')
+                                    <div class="indicador-red-jefe"></div>
+                                @else
+
+                                    <div class="indicador-green-jefe"></div>
+
+                                @endif
+
+                            </center>
+
+
+
                         </td>
                         {{-- <td><a href='javascript:getlinkJefe();'><button id="btn-jefe" type="button"
                                     class="btn btn-success"><i class="icon ion-md-copy"></i></button></td> --}}
@@ -176,7 +207,7 @@
     </div>
     </div>
     <!-- Modal load-->
-    
+
 
 
 

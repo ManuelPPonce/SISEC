@@ -7,6 +7,7 @@ use App\Models\Area;
 use App\Models\usuarios;
 use App\Participante;
 use App\Project;
+use App\RespuestasJefe;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -38,7 +39,7 @@ class EncuestasController extends Controller
     public function index(Request $request)
     {
 
-        $anios = ['2019', '2020','2021'];
+        $anios = ['2019', '2020', '2021'];
         $meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
         setlocale(LC_ALL, 'es_ES');
 
@@ -52,7 +53,7 @@ class EncuestasController extends Controller
         // }
         $clave_zona = Auth::user()->name;
         // dd($clave_zona);
-        $zona = Area::where('Clave_Zona', $clave_zona)->pluck('ID_Area') ;
+        $zona = Area::where('Clave_Zona', $clave_zona)->pluck('ID_Area');
 
 
         // dd($zona);
@@ -63,12 +64,13 @@ class EncuestasController extends Controller
         $mes_actual = $request->input('id_mes');
 
         // dd($mes_actual);
-          $cursos = Project::where('Anio_Curso', $anio_actual)->whereMonth('Fecha_Inicio', $mes_actual)->whereIn('ID_Area', $zona )->get();
+        $cursos = Project::where('Anio_Curso', $anio_actual)->whereMonth('Fecha_Inicio', $mes_actual)->whereIn('ID_Area', $zona)->get();
         // $cursos = Project::where('Anio_Curso', $anio_actual)->whereMonth('Fecha_Inicio', $mes_actual)->get();
         // dd($request->all());
         $participantes_all = [];
 
         $participantes = Participante::where('ID_Actividad', 16440)->get();
+        // dd($participantes);
         foreach ($participantes as $key => $participante_id) {
             # code...
             array_push($participantes_all, $participante_id->ID_Empleado);
@@ -77,8 +79,8 @@ class EncuestasController extends Controller
         // dd($empleados);
         // dd($participantes_all);
         // return view('cursos' , compact('participantes'));
-
-        return view('cursos', compact('cursos', 'participantes', 'empleados','anio_actual','mes_actual'));
+        $RespuestasJefe = RespuestasJefe::all();
+        return view('cursos', compact('cursos', 'participantes', 'empleados', 'anio_actual', 'mes_actual', 'RespuestasJefe'));
     }
 
     /**
@@ -118,48 +120,29 @@ class EncuestasController extends Controller
         //     'message' => 'Articulo Eliminado'
         // ]);
     }
-    public function login(){
+    public function login()
+    {
 
         return view('inicio');
     }
- public function inicioSesion(Request $request){
+    public function inicioSesion(Request $request)
+    {
+    }
 
-
- }
-
-
-
-    // public function search(Request $request)
-    // {
-    //     $posts = empleado::where('Nombre_Empleado', 'LIKE', '%' . $request->search . '%')->get();
-    //     return \response()->json($posts);
-    // }
-
-
-
-
-
-    // public function search(Request $request)
-    // {
-    //     $term = $request->term;
-
-    //     // $querys = empleado::where('Nombre_Empleado', 'LIKE', ' % ' . $term . '%')->get();
-    //     $posts = empleado::where('Nombre_Empleado', 'LIKE', '%' . $term . '%')->get();
-    //     return \response()->json($posts);
-
-    //     // $data = [];
-
-    //     // foreach ($querys as $query) {
-    //     //     # code...
-    //     //     $data[] = [
-    //     //         'label' => $query->name
-    //     //     ];
-    //     // }
-
-    //     //     // ->orderBy('name', 'ASC')
-    //     //     // ->select('name as label')
-    //     //     // ->get();
-
-    //     // return $data;
-    // }
+    public function envjefe(Request $request)
+    {
+       $curso_id =  $request->input('id_curso');
+       $curso = Project::find($curso_id);
+       $curso->Jefe_Not = 1 ;
+       $curso->save();
+       return response(json_encode($curso), 200)->header('Content-type', 'text/plain');
+    }
+    public function envreac(Request $request)
+    {
+       $curso_id =  $request->input('id_curso');
+       $curso = Project::find($curso_id);
+       $curso->Reaccion_Not = 1 ;
+       $curso->save();
+       return response(json_encode($curso), 200)->header('Content-type', 'text/plain');
+    }
 }

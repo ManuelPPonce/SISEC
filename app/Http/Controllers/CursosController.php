@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Participante;
+use App\RespuestasJefe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -24,6 +25,7 @@ class CursosController extends Controller
 
     public function index(){
         $participantes = Participante::all();
-        return view('create', compact('participantes'));
+
+        return view('create', compact('participantes' ));
     }
 }
